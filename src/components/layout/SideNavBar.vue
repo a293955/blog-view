@@ -167,7 +167,7 @@ export default {
     },
     logout() {
       //如果在个人中心则跳回上一页
-      if (this.$route.path == "/user") {
+      if (this.$route.path === "/user") {
         this.$router.go(-1);
       }
       this.axios.get("/api/logout").then(({ data }) => {

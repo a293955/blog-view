@@ -17,7 +17,7 @@
 export default {
   computed: {
     isMessage() {
-      return this.$route.path == "/message";
+      return this.$route.path === "/message";
     },
     blogInfo() {
       return this.$store.state.blogInfo;
