@@ -14,5 +14,13 @@
     <orderEntry type="library" name="TCaptcha" level="application" />
     <orderEntry type="library" name="qc_jssdk" level="application" />
     <orderEntry type="library" name="ribbon" level="application" />
+    <orderEntry type="library" name="github-markdown" level="application" />
+    <orderEntry type="library" name="KaTeX" level="application" />
+    <orderEntry type="library" name="TCaptcha" level="application" />
+    <orderEntry type="library" name="materialdesignicons" level="application" />
+    <orderEntry type="library" name="ribbon" level="application" />
+    <orderEntry type="library" name="APlayer" level="application" />
+    <orderEntry type="library" name="aplayer" level="application" />
+    <orderEntry type="library" name="meting" level="application" />
   </component>
 </module>
