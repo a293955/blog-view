@@ -1,7 +1,7 @@
 <template>
   <div class="paging">
     <!-- 上一页按钮 第一页不显示 -->
-    <a @click="prePage" v-show="current != 1" class="ml-1 mr-1">上一页</a>
+    <a @click="prePage" v-show="current !== 1" class="ml-1 mr-1">上一页</a>
     <!-- 小于6页直接显示 -->
     <template v-if="totalPage < 6">
       <a
@@ -96,7 +96,7 @@
       }}</a>
     </template>
     <!-- 下一页按钮 最后一页不显示 -->
-    <a @click="nextPage" v-show="current != totalPage" class="ml-1 mr-1">
+    <a @click="nextPage" v-show="current !== totalPage" class="ml-1 mr-1">
       下一页
     </a>
   </div>
@@ -152,7 +152,7 @@ export default {
   computed: {
     isActive() {
       return function(i) {
-        if (i == this.current) {
+        if (i === this.current) {
           return "active";
         }
       };

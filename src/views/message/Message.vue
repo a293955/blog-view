@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     addToList() {
-      if (this.messageContent.trim() == "") {
+      if (this.messageContent.trim() === "") {
         this.$toast({ type: "error", message: "留言不能为空" });
         return false;
       }
@@ -94,7 +94,7 @@ export default {
     cover() {
       var cover = "";
       this.$store.state.blogInfo.pageList.forEach(item => {
-        if (item.pageLabel == "message") {
+        if (item.pageLabel === "message") {
           cover = item.pageCover;
         }
       });
@@ -160,7 +160,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  height: calc(100% -50px);
+  height: calc(100% - 50px);
   width: 100%;
 }
 .barrage-items {

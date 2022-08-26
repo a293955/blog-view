@@ -64,7 +64,7 @@
             <a v-else :href="item.webSite" target="_blank">
               {{ item.nickname }}
             </a>
-            <v-icon size="20" color="#ffa51e" v-if="item.userId == 1">
+            <v-icon size="20" color="#ffa51e" v-if="item.userId === 1">
               mdi-check-decagram
             </v-icon>
           </div>
@@ -104,7 +104,7 @@
                 <a v-else :href="reply.webSite" target="_blank">
                   {{ reply.nickname }}
                 </a>
-                <v-icon size="20" color="#ffa51e" v-if="reply.userId == 1">
+                <v-icon size="20" color="#ffa51e" v-if="reply.userId === 1">
                   mdi-check-decagram
                 </v-icon>
               </div>
@@ -128,7 +128,7 @@
               <!-- 回复内容 -->
               <p class="comment-content">
                 <!-- 回复用户名 -->
-                <template v-if="reply.replyUserId != item.userId">
+                <template v-if="reply.replyUserId !== item.userId">
                   <span v-if="!reply.replyWebSite" class="ml-1">
                     @{{ reply.replyNickname }}
                   </span>
@@ -289,7 +289,7 @@ export default {
           params: param
         })
         .then(({ data }) => {
-          if (this.current == 1) {
+          if (this.current === 1) {
             this.commentList = data.data.recordList;
           } else {
             this.commentList.push(...data.data.recordList);
@@ -306,7 +306,7 @@ export default {
         return false;
       }
       //判空
-      if (this.commentContent.trim() == "") {
+      if (this.commentContent.trim() === "") {
         this.$toast({ type: "error", message: "评论不能为空" });
         return false;
       }
@@ -364,7 +364,7 @@ export default {
         .then(({ data }) => {
           if (data.flag) {
             // 判断是否点赞
-            if (this.$store.state.commentLikeSet.indexOf(comment.id) != -1) {
+            if (this.$store.state.commentLikeSet.indexOf(comment.id) !== -1) {
               this.$set(comment, "likeCount", comment.likeCount - 1);
             } else {
               this.$set(comment, "likeCount", comment.likeCount + 1);
@@ -396,7 +396,9 @@ export default {
     isLike() {
       return function(commentId) {
         var commentLikeSet = this.$store.state.commentLikeSet;
-        return commentLikeSet.indexOf(commentId) != -1 ? "like-active" : "like";
+        return commentLikeSet.indexOf(commentId) !== -1
+          ? "like-active"
+          : "like";
       };
     }
   },

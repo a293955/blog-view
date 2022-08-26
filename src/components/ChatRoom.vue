@@ -52,9 +52,9 @@
               :class="isMyContent(item)"
             >
               <!-- 文字消息 -->
-              <div v-if="item.type == 3" v-html="item.content" />
+              <div v-if="item.type === 3" v-html="item.content" />
               <!-- 语音消息 -->
-              <div v-if="item.type == 5" @click.prevent.stop="playVoice(item)">
+              <div v-if="item.type === 5" @click.prevent.stop="playVoice(item)">
                 <audio
                   @ended="endVoice(item)"
                   @canplay="getVoiceTime(item)"
@@ -146,7 +146,7 @@
       <img
         width="100%"
         height="100%"
-        src="https://static.talkxj.com/config/logo.png"
+        src="http://localhost/config/logo.png"
       />
     </div>
   </div>
@@ -234,7 +234,7 @@ export default {
             // 历史记录
             that.chatRecordList = data.data.chatRecordList;
             that.chatRecordList.forEach(item => {
-              if (item.type == 5) {
+              if (item.type === 5) {
                 that.voiceList.push(item.id);
               }
             });
@@ -254,7 +254,7 @@ export default {
               that.voiceList.splice(that.voiceList.indexOf(data.data.id), 1);
             }
             for (var i = 0; i < that.chatRecordList.length; i++) {
-              if (that.chatRecordList[i].id == data.data.id) {
+              if (that.chatRecordList[i].id === data.data.id) {
                 that.chatRecordList.splice(i, 1);
                 i--;
               }
@@ -275,7 +275,7 @@ export default {
     },
     saveMessage(e) {
       e.preventDefault();
-      if (this.content.trim() == "") {
+      if (this.content.trim() === "") {
         this.$toast({ type: "error", message: "内容不能为空" });
         return false;
       }
@@ -313,8 +313,8 @@ export default {
         item.style.display = "none";
       });
       if (
-        item.ipAddress == this.ipAddress ||
-        (item.userId != null && item.userId == this.userId)
+        item.ipAddress === this.ipAddress ||
+        (item.userId != null && item.userId === this.userId)
       ) {
         this.$refs.backBtn[index].style.left = e.offsetX + "px";
         this.$refs.backBtn[index].style.bottom = e.offsetY + "px";
@@ -325,7 +325,7 @@ export default {
     back(item, index) {
       var socketMsg = {
         id: item.id,
-        isVoice: item.type == 5
+        isVoice: item.type === 5
       };
       this.WebsocketMessage.type = 4;
       this.WebsocketMessage.data = socketMsg;
@@ -423,7 +423,7 @@ export default {
       time = Math.ceil(time);
       var str = "⬝⬝⬝";
       for (var i = 0; i < time; i++) {
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
           str += "⬝";
         }
       }
@@ -435,8 +435,8 @@ export default {
     isSelf() {
       return function(item) {
         return (
-          item.ipAddress == this.ipAddress ||
-          (item.userId != null && item.userId == this.userId)
+          item.ipAddress === this.ipAddress ||
+          (item.userId != null && item.userId === this.userId)
         );
       };
     },
@@ -474,7 +474,7 @@ export default {
       return this.$store.state.userId;
     },
     isInput() {
-      return this.content.trim() != ""
+      return this.content.trim() !== ""
         ? "iconfont iconzhifeiji submit-btn"
         : "iconfont iconzhifeiji";
     }

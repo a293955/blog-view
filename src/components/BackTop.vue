@@ -48,11 +48,11 @@ export default {
       }
     },
     show() {
-      const flag = this.isOut == "rightside-out";
+      const flag = this.isOut === "rightside-out";
       this.isOut = flag ? "rightside-in" : "rightside-out";
     },
     check() {
-      const flag = this.icon == "iconyueliang";
+      const flag = this.icon === "iconyueliang";
       this.icon = flag ? "icontaiyang" : "iconyueliang";
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     }

@@ -18,7 +18,7 @@ export default {
     //关闭登录框
     that.$store.state.loginFlag = false;
     //通过路径判断是微博登录还是qq登录
-    if (that.$route.path == "/oauth/login/qq") {
+    if (that.$route.path === "/oauth/login/qq") {
       // 拿到openId，accessToken传入后台
       if (QC.Login.check()) {
         QC.Login.getMe(function(openId, accessToken) {
@@ -69,7 +69,7 @@ export default {
     }
     // 跳转回原页面
     const loginUrl = that.$store.state.loginUrl;
-    if (loginUrl != null && loginUrl != "") {
+    if (loginUrl != null && loginUrl !== "") {
       that.$router.push({ path: loginUrl });
     } else {
       that.$router.push({ path: "/" });
@@ -95,7 +95,7 @@ export default {
 }
 #preloader_1 span {
   display: block;
-  bottom: 0px;
+  bottom: 0;
   width: 9px;
   height: 5px;
   background: #9b59b6;

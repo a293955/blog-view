@@ -69,7 +69,7 @@
 export default {
   created() {
     const path = this.$route.path;
-    if (path.indexOf("/categories") != -1) {
+    if (path.indexOf("/categories") !== -1) {
       this.title = "分类";
     } else {
       this.title = "标签";
@@ -113,7 +113,7 @@ export default {
     cover() {
       var cover = "";
       this.$store.state.blogInfo.pageList.forEach(item => {
-        if (item.pageLabel == "articleList") {
+        if (item.pageLabel === "articleList") {
           cover = item.pageCover;
         }
       });

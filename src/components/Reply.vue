@@ -60,7 +60,7 @@ export default {
         this.$store.state.loginFlag = true;
         return false;
       }
-      if (this.commentContent.trim() == "") {
+      if (this.commentContent.trim() === "") {
         this.$toast({ type: "error", message: "回复不能为空" });
         return false;
       }
@@ -70,7 +70,7 @@ export default {
         return (
           "<img src= '" +
           EmojiList[str] +
-          "' width='24'height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
+          "' width='24' height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
         );
       });
       const path = this.$route.path;

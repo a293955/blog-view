@@ -116,7 +116,7 @@
                 article.likeCount
               }}</span>
             </a>
-            <a class="reward-btn" v-if="blogInfo.websiteConfig.isReward == 1">
+            <a class="reward-btn" v-if="blogInfo.websiteConfig.isReward === 1">
               <!-- 打赏按钮 -->
               <i class="iconfont iconerweima" /> 打赏
               <!-- 二维码 -->
@@ -361,7 +361,7 @@ export default {
           if (data.flag) {
             //判断是否点赞
             if (
-              this.$store.state.articleLikeSet.indexOf(this.article.id) != -1
+              this.$store.state.articleLikeSet.indexOf(this.article.id) !== -1
             ) {
               this.$set(this.article, "likeCount", this.article.likeCount - 1);
             } else {
@@ -400,7 +400,7 @@ export default {
     },
     isLike() {
       var articleLikeSet = this.$store.state.articleLikeSet;
-      return articleLikeSet.indexOf(this.article.id) != -1
+      return articleLikeSet.indexOf(this.article.id) !== -1
         ? "like-btn-active"
         : "like-btn";
     },

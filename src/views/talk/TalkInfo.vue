@@ -116,7 +116,7 @@ export default {
       this.axios.post("/api/talks/" + talk.id + "/like").then(({ data }) => {
         if (data.flag) {
           // 判断是否点赞
-          if (this.$store.state.talkLikeSet.indexOf(talk.id) != -1) {
+          if (this.$store.state.talkLikeSet.indexOf(talk.id) !== -1) {
             this.$set(talk, "likeCount", talk.likeCount - 1);
           } else {
             this.$set(talk, "likeCount", talk.likeCount + 1);
@@ -130,7 +130,7 @@ export default {
     cover() {
       var cover = "";
       this.$store.state.blogInfo.pageList.forEach(item => {
-        if (item.pageLabel == "talk") {
+        if (item.pageLabel === "talk") {
           cover = item.pageCover;
         }
       });
@@ -139,7 +139,7 @@ export default {
     isLike() {
       return function(talkId) {
         var talkLikeSet = this.$store.state.talkLikeSet;
-        return talkLikeSet.indexOf(talkId) != -1 ? "#eb5055" : "#999";
+        return talkLikeSet.indexOf(talkId) !== -1 ? "#eb5055" : "#999";
       };
     }
   }

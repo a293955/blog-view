@@ -38,7 +38,7 @@
             label="简介"
             placeholder="介绍下自己吧"
           />
-          <div v-if="loginType != 0" class="mt-7 binding">
+          <div v-if="loginType !== 0" class="mt-7 binding">
             <v-text-field
               disabled
               v-model="email"
@@ -106,7 +106,7 @@ export default {
     cover() {
       var cover = "";
       this.$store.state.blogInfo.pageList.forEach(item => {
-        if (item.pageLabel == "user") {
+        if (item.pageLabel === "user") {
           cover = item.pageCover;
         }
       });

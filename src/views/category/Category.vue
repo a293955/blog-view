@@ -46,7 +46,7 @@ export default {
     cover() {
       var cover = "";
       this.$store.state.blogInfo.pageList.forEach(item => {
-        if (item.pageLabel == "category") {
+        if (item.pageLabel === "category") {
           cover = item.pageCover;
         }
       });

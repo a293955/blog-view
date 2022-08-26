@@ -315,7 +315,7 @@ export default {
         return (
           "<img src= '" +
           EmojiList[str] +
-          "' width='24'height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
+          "' width='24' height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
         );
       });
       //发送请求

@@ -133,11 +133,9 @@ export default {
   methods: {
     scroll() {
       const that = this;
-      let scrollTop =
-        window.pageYOffset ||
+      that.scrollTop = window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      that.scrollTop = scrollTop;
       if (that.scrollTop > 60) {
         that.navClass = "nav-fixed";
       } else {
@@ -155,7 +153,7 @@ export default {
     },
     logout() {
       //如果在个人中心则跳回上一页
-      if (this.$route.path == "/user") {
+      if (this.$route.path === "/user") {
         this.$router.go(-1);
       }
       this.axios.get("/api/logout").then(({ data }) => {

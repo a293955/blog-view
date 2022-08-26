@@ -5,9 +5,9 @@
     <!-- 侧边导航栏 -->
     <SideNavBar></SideNavBar>
     <!-- 内容 -->
-    <v-content>
+    <v-main>
       <router-view :key="$route.fullPath" />
-    </v-content>
+    </v-main>
     <!-- 页脚 -->
     <Footer></Footer>
     <!-- 返回顶部 -->
@@ -22,10 +22,10 @@
     <ForgetModel></ForgetModel>
     <!-- 绑定邮箱模态框 -->
     <EmailModel></EmailModel>
-    <!-- 音乐播放器 -->
-    <MyAPlayer v-if="blogInfo.websiteConfig.isMusicPlayer === 1 && !isMobile" />
     <!-- 聊天室 -->
     <ChatRoom v-if="blogInfo.websiteConfig.isChatRoom === 1"></ChatRoom>
+    <!-- 音乐播放器 -->
+    <MyAPlayer v-if="blogInfo.websiteConfig.isMusicPlayer === 1 && !isMobile" />
   </v-app>
 </template>
 
