@@ -9,7 +9,7 @@
       <!-- 博主头像 -->
       <div class="my-wrapper">
         <v-avatar size="110">
-          <img class="author-avatar" :src="avatar" />
+          <img class="author-avatar" :src="avatar" alt="" />
         </v-avatar>
       </div>
       <!-- 介绍 -->

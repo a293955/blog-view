@@ -11,7 +11,7 @@
           <!-- 用户信息 -->
           <div class="user-info-wrapper">
             <v-avatar size="36" class="user-avatar">
-              <img :src="item.avatar" />
+              <img :src="item.avatar" alt="" />
             </v-avatar>
             <div class="user-detail-wrapper">
               <div class="user-nickname">

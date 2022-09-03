@@ -11,7 +11,7 @@
         <v-col md="3" cols="12">
           <button id="pick-avatar">
             <v-avatar size="140">
-              <img :src="this.$store.state.avatar" />
+              <img :src="this.$store.state.avatar" alt="" />
             </v-avatar>
           </button>
           <avatar-cropper

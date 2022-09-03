@@ -126,6 +126,7 @@
                     <img
                       class="reward-img"
                       :src="blogInfo.websiteConfig.weiXinQRCode"
+                      alt=""
                     />
                     <div class="reward-desc">微信</div>
                   </li>
@@ -133,6 +134,7 @@
                     <img
                       class="reward-img"
                       :src="blogInfo.websiteConfig.alipayQRCode"
+                      alt=""
                     />
                     <div class="reward-desc">支付宝</div>
                   </li>
@@ -150,6 +152,7 @@
                 <img
                   class="post-cover"
                   :src="article.lastArticle.articleCover"
+                  alt=""
                 />
                 <div class="post-info">
                   <div class="label">上一篇</div>
@@ -168,6 +171,7 @@
                 <img
                   class="post-cover"
                   :src="article.nextArticle.articleCover"
+                  alt=""
                 />
                 <div class="post-info" style="text-align: right">
                   <div class="label">下一篇</div>
@@ -193,7 +197,11 @@
                 :key="item.id"
               >
                 <router-link :to="'/articles/' + item.id">
-                  <img class="recommend-cover" :src="item.articleCover" />
+                  <img
+                    class="recommend-cover"
+                    :src="item.articleCover"
+                    alt=""
+                  />
                   <div class="recommend-info">
                     <div class="recommend-date">
                       <i class="iconfont iconrili" />
@@ -235,7 +243,7 @@
                 :key="item.id"
               >
                 <router-link :to="'/articles/' + item.id" class="content-cover">
-                  <img :src="item.articleCover" />
+                  <img :src="item.articleCover" alt="" />
                 </router-link>
                 <div class="content">
                   <div class="content-title">

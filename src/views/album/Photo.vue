@@ -13,6 +13,7 @@
           :key="index"
           :src="item"
           @click="preview(index)"
+          alt=""
         />
       </div>
       <!-- 无限加载 -->

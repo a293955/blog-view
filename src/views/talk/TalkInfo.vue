@@ -10,7 +10,7 @@
         <!-- 用户信息 -->
         <div class="user-info-wrapper">
           <v-avatar size="36" class="user-avatar">
-            <img :src="talkInfo.avatar" />
+            <img :src="talkInfo.avatar" alt="" />
           </v-avatar>
           <div class="user-detail-wrapper">
             <div class="user-nickname">

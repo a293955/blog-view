@@ -65,10 +65,10 @@ export default {
         return false;
       }
       //解析表情
-      var reg = /\[.+?\]/g;
+      var reg = /\[.+?]/g;
       this.commentContent = this.commentContent.replace(reg, function(str) {
         return (
-          "<img src= '" +
+          "<img alt='' src= '" +
           EmojiList[str] +
           "' width='24' height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
         );

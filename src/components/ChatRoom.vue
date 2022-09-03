@@ -9,11 +9,7 @@
     >
       <!-- 标题 -->
       <div class="header">
-        <img
-          width="32"
-          height="32"
-          src="https://static.talkxj.com/config/logo.png"
-        />
+        <img width="32" height="32" src="https://localhost/logo.png" alt="" />
         <div style="margin-left:12px">
           <div>聊天室</div>
           <div style="font-size:12px">当前{{ count }}人在线</div>
@@ -39,7 +35,7 @@
           :key="index"
         >
           <!-- 头像 -->
-          <img :src="item.avatar" :class="isleft(item)" />
+          <img :src="item.avatar" :class="isleft(item)" alt="" />
           <div>
             <div class="nickname" v-if="!isSelf(item)">
               {{ item.nickname }}
@@ -147,6 +143,7 @@
         width="100%"
         height="100%"
         src="http://localhost/config/logo.png"
+        alt=""
       />
     </div>
   </div>
@@ -280,12 +277,12 @@ export default {
         return false;
       }
       //解析表情
-      var reg = /\[.+?\]/g;
+      var reg = /\[.+?]/g;
       this.content = this.content.replace(reg, function(str) {
         return (
-          "<img src= '" +
+          "<img alt='' src= '" +
           EmojiList[str] +
-          "' width='24'height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
+          "' width='24' height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
         );
       });
       var socketMsg = {

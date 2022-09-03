@@ -10,7 +10,10 @@
     <!-- 博主介绍 -->
     <div class="blogger-info">
       <v-avatar size="110" style="margin-bottom:0.5rem">
-        <img :src="this.$store.state.blogInfo.websiteConfig.websiteAvatar" />
+        <img
+          :src="this.$store.state.blogInfo.websiteConfig.websiteAvatar"
+          alt=""
+        />
       </v-avatar>
     </div>
     <!-- 博客信息 -->

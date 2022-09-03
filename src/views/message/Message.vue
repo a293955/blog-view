@@ -31,6 +31,7 @@
                 width="30"
                 height="30"
                 style="border-radius:50%"
+                alt=""
               />
               <span class="ml-2">{{ slotProps.item.nickname }} :</span>
               <span class="ml-2">{{ slotProps.item.messageContent }}</span>

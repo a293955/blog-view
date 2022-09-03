@@ -8,10 +8,12 @@
           <img
             v-if="this.$store.state.avatar"
             :src="this.$store.state.avatar"
+            alt=""
           />
           <img
             v-else
             :src="this.$store.state.blogInfo.websiteConfig.touristAvatar"
+            alt=""
           />
         </v-avatar>
         <div style="width:100%" class="ml-3">
@@ -58,7 +60,7 @@
       >
         <!-- 头像 -->
         <v-avatar size="40" class="comment-avatar">
-          <img :src="item.avatar" />
+          <img :src="item.avatar" alt="" />
         </v-avatar>
         <div class="comment-meta">
           <!-- 用户名 -->
@@ -96,7 +98,7 @@
           >
             <!-- 头像 -->
             <v-avatar size="36" class="comment-avatar">
-              <img :src="reply.avatar" />
+              <img :src="reply.avatar" alt="" />
             </v-avatar>
             <div class="reply-meta">
               <!-- 用户名 -->
@@ -310,10 +312,10 @@ export default {
         return false;
       }
       //解析表情
-      var reg = /\[.+?\]/g;
+      var reg = /\[.+?]/g;
       this.commentContent = this.commentContent.replace(reg, function(str) {
         return (
-          "<img src= '" +
+          "<img alt='' src= '" +
           EmojiList[str] +
           "' width='24' height='24' style='margin: 0 1px;vertical-align: text-bottom'/>"
         );

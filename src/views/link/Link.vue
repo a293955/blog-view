@@ -19,7 +19,7 @@
         >
           <a :href="item.linkAddress" target="_blank">
             <v-avatar size="65" class="link-avatar">
-              <img :src="item.linkAvatar" />
+              <img :src="item.linkAvatar" alt="" />
             </v-avatar>
             <div style="width:100%;z-index:10;">
               <div class="link-name">{{ item.linkName }}</div>
