@@ -9,7 +9,7 @@
     >
       <!-- 标题 -->
       <div class="header">
-        <img width="32" height="32" src="https://localhost/logo.png" alt="" />
+        <img width="32" height="32" src="http://localhost/logo.png" alt="" />
         <div style="margin-left:12px">
           <div>聊天室</div>
           <div style="font-size:12px">当前{{ count }}人在线</div>

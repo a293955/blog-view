@@ -133,7 +133,8 @@ export default {
   methods: {
     scroll() {
       const that = this;
-      that.scrollTop = window.pageYOffset ||
+      that.scrollTop =
+        window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       if (that.scrollTop > 60) {
