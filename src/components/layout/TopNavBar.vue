@@ -102,6 +102,7 @@
               :src="this.$store.state.avatar"
               height="30"
               width="30"
+              alt=""
             />
             <ul class="menus-submenu">
               <li>
